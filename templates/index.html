@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário Técnico Inteligente (Gemini)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/rede.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="" alt="">
+        <div>
+            <h1> Tecnologia e Serviços </h1>
+            <strong>Bem vindo</strong>
+            <p>Conheça os nossos serviços</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <input type="text" id="inputNome" placeholder="Ex: Conector RJ45 ou Switch Cisco">
+            <button onclick="buscarItem()"><i class="fas fa-search"></i> Buscar Item</button>
+        </section>
+
+        <section class="results-container">
+            <div class="mysql-results">
+                <h2> Itens Encontrados </h2>
+                <div id="resultados" class="result-box">
+                    <p class="placeholder">Aguardando busca...</p>
+                </div>
+            </div>
+
+            <div class="ai-suggestions">
+                <h2> Sugestão </h2>
+                <div id="ia-box" class="result-box ia-box">
+                    <p class="placeholder">As sugestões aparecerão aqui. Se o item não for encontrado, você poderá
+                        salvá-lo.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="additional-tools">
+            <div class="tool-box export-box">
+                <h3> Exportação de Dados</h3>
+                <button onclick="exportarExcel()"><i class="fas fa-file-excel"></i> Exportar Inventário para
+                    Excel</button>
+            </div>
+
+            <div class="tool-box chat-box-wrapper">
+                <h3> Suporte Técnico (Chatbot)</h3>
+                <div id="chat-box" class="chat-display">
+                    <p class="bot-message"><i class="fas fa-robot"></i> Olá! Sou seu assistente. Pergunte sobre
+                        hardware, redes ou itens do inventário!</p>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Digite sua pergunta..."
+                        onkeypress="if(event.keyCode===13) enviarChat()">
+                    <button onclick="enviarChat()"><i class="fas fa-paper-plane"></i> Enviar</button>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="image-analysis-container">
+            <h2>📸 Análise Multimodal de Problemas</h2>
+            <div class="image-form">
+                <input type="file" id="image-upload" accept="image/*">
+                <textarea id="problema-desc"
+                    placeholder="Descreva o problema ou o que você quer analisar na foto (Ex: 'Este é um cabo de rede danificado no conector RJ-45')."></textarea>
+                <button onclick="analisarImagem()"><i class="fas fa-camera"></i> Analisar Imagem e Problema</button>
+            </div>
+            <div id="analise-resultado" class="result-box ia-box analysis-result">
+                <p class="placeholder">Resultado da análise da IA aparecerá aqui.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='Scripts/rede.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+
+</html>

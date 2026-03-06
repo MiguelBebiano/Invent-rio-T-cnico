@@ -1,0 +1,275 @@
+/* --- 1. Base e Tipografia --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
+    background-color: #ffffff; /* Fundo branco puro */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+    
+}
+
+header {
+    background-image: url(../uploads/Gemini_Generated_Image_z1n7i5z1n7i5z1n7.png);
+    background-position: center;
+    color: #ffffff;
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    position: absolute;
+    background-size: cover;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+header p {
+    opacity: 0.8;
+}
+
+main {
+    width: 95%;
+    max-width: 1300px;
+    padding: 20px;
+    position: absolute;
+    top: 350px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 40px 0;
+}
+
+/* --- 2. Elementos de Formulário e Botões --- */
+input[type="text"], input[type="number"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+button {
+    padding: 12px 25px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+/* Cores dos Botões */
+.search-section button {
+    background-color: #007bff; /* Azul primário */
+}
+.search-section button:hover {
+    background-color: #0056b3;
+}
+
+.chat-input-area button {
+    background-color: #28a745; /* Verde para enviar/sucesso */
+}
+.chat-input-area button:hover {
+    background-color: #1e7e34;
+}
+
+.image-form button {
+    background-color: #ffc107; /* Amarelo/Laranja para Ação */
+    color: #333;
+}
+.image-form button:hover {
+    background-color: #e0a800;
+}
+
+/* --- 3. Layout de Seções --- */
+.section-title {
+    font-size: 1.8em;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.search-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #f8f9fa; /* Cinza claro para destacar a barra de busca */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.result-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0; /* Borda bem clara */
+}
+
+.result-box p {
+    margin: 8px 0;
+    border-bottom: 1px dotted #eee;
+    padding-bottom: 5px;
+}
+
+.result-box p:last-child {
+    border-bottom: none;
+}
+
+.placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.ia-box {
+    background-color: #f0f8ff; /* Azul pastel */
+    border-left: 5px solid #007bff; /* Linha de destaque azul */
+}
+
+/* --- 4. Ferramentas Adicionais --- */
+.additional-tools {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.tool-box {
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.export-box button {
+    width: 100%;
+    background-color: #6c757d; /* Cinza sóbrio */
+}
+.export-box button:hover {
+    background-color: #5a6268;
+}
+
+/* --- 5. Chatbot Styling --- */
+.chat-display {
+    height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.bot-message, .user-message {
+    padding: 10px 15px;
+    border-radius: 18px; /* Cantos mais arredondados */
+    margin: 8px 0;
+    max-width: 80%;
+}
+
+.bot-message {
+    background-color: #eef7ff; /* Fundo muito claro da IA */
+    margin-right: auto;
+    border: 1px solid #cce5ff;
+}
+
+.user-message {
+    background-color: #f0fff0; /* Fundo muito claro do usuário */
+    margin-left: auto;
+    text-align: right;
+    border: 1px solid #d4edda;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- 6. Análise de Imagem --- */
+.image-analysis-container {
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.image-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+.image-form textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+/* --- 7. Formulário de Salvar Item --- */
+.save-form-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff8e1; /* Amarelo muito claro para ação */
+    border: 1px solid #ffe0b2;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.save-form-box button {
+    background-color: #17a2b8; /* Turquesa para Salvar */
+}
+.save-form-box button:hover {
+    background-color: #138496;
+}
+
+/* --- Responsividade Básica --- */
+@media (max-width: 1000px) {
+    .results-container, .additional-tools {
+        grid-template-columns: 1fr;
+    }
+    .image-form {
+        grid-template-columns: 1fr;
+    }
+}
